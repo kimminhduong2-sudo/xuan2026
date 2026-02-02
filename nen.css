@@ -1,0 +1,102 @@
+body {margin: 0; background-color: #0a0101;}
+
+.nenhong {
+    width: 1200px; 
+    margin: 0 auto; 
+    min-height: 100vh;
+    background-color: #fcfdcf;}
+
+.bl {display: block;}
+.il {display: inline;}
+
+/* ===== MENU NGANG ===== */
+.menu {
+  display: flex;
+  background: #e23333;
+  padding: 0 20px;
+}
+
+/* ===== MENU CHA ===== */
+.item {
+  position: relative;
+  padding: 14px 22px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+/* gạch chân menu cha */
+.item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0;
+  height: 3px;                 /* gạch chân đậm hơn */
+  background: white;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* hover menu cha */
+.item:hover {
+  transform: scale(1.08);      /* phóng to chữ */
+}
+
+.item:hover::after {
+  width: 70%;
+}
+
+/* ===== MENU CON ===== */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f48fb1;
+  min-width: 160px;
+
+  /* hiệu ứng cuộn từ dưới lên */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+/* hover → hiện menu con */
+.item:hover .submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ===== ITEM MENU CON ===== */
+.submenu a {
+  display: block;
+  padding: 10px 15px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+/* gạch chân menu con */
+.submenu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+/* hover menu con */
+.submenu a:hover {
+  transform: scale(1.05);
+}
+
+
+
